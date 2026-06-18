@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SVG State Change</title>
+    <style>
+        /* Default state: Hide hover and active SVGs */
+        .svg-trigger .hover-state,
+        .svg-trigger .active-state {
+            display: none;
+        }
+
+        /* Hover state: Hide normal, show hover SVG */
+        .svg-trigger:hover .normal-state {
+            display: none;
+        }
+        .svg-trigger:hover .hover-state {
+            display: block;
+        }
+
+        /* Click/Active state: Hide normal and hover, show active SVG */
+        .svg-trigger:active .normal-state,
+        .svg-trigger:active .hover-state {
+            display: none;
+        }
+        .svg-trigger:active .active-state {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Wrapper link/button to handle user interaction states -->
+    <a href="#" class="svg-trigger" role="button" aria-label="Interactive SVG Button">
+        
+        <!-- Normal State SVG (Blue Circle) -->
+        <svg class="normal-state" width="100" height="100" viewBox="0 0 100 100">
+            <use href="eyes-open.svg"></use>
+        </svg>
+
+        <!-- Hover State SVG (Green Circle) -->
+        <svg class="hover-state" width="100" height="100" viewBox="0 0 100 100">
+            <use href="wink.svg"></use>
+        </svg>
+
+        <!-- Click/Active State SVG (Red Circle) -->
+        <svg class="active-state" width="100" height="100" viewBox="0 0 100 100">
+          <use href="right-wink.svg"></use>
+        </svg>
+
+    </a>
+
+</body>
+</html>

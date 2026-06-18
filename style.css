@@ -1,0 +1,27 @@
+.svg-container {
+    position:relative;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+.svg-container .svg-hover, .svg-container .svg-click {
+display: none;
+position: absolute;
+top: 0;
+left: 0;
+}
+.svg-container .svg-regular {
+display: block;
+}
+.svg-container:hover .svg-regular {
+    display: none;
+}
+.svg-container:hover { .svg-hover 
+    display: block;
+}
+.svg-container:active .svg-hover {
+display: none;
+}
+.svg-container:active .svg-click {
+    display: block;
+}
